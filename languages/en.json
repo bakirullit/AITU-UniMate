@@ -1,0 +1,12 @@
+{
+    "welcome": "Welcome, {user_id}",
+    "welcome_back": "Long time no see",
+    "history": "History 🕒",
+    "settings": "Settings ⚙️",
+    "delete": "Delete ❌",
+    "next": "Next ➡️",
+    "back": "Back ⬅️",
+    "register": "Register",
+    "info": "Information",
+    "guest": "Auth as Guest"
+}

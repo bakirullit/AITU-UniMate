@@ -1,12 +1,8 @@
 {
-    "welcome": "Welcome, {user_id}",
-    "welcome_back": "Long time no see",
-    "history": "History 🕒",
-    "settings": "Settings ⚙️",
-    "delete": "Delete ❌",
-    "next": "Next ➡️",
-    "back": "Back ⬅️",
-    "register": "Register",
-    "info": "Information",
-    "guest": "Auth as Guest"
-}
+    "start_name": "What is your name?",
+    "ask_age": "How old are you?",
+    "ask_photo": "Please send your photo.",
+    "ask_bio": "Tell us about yourself.",
+    "invalid_age": "Please enter a valid age.",
+    "profile_saved": "Your profile has been saved.",
+  }

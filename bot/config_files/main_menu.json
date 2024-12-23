@@ -1,0 +1,34 @@
+{
+  "main": {
+    "profile": "menu_profile",
+    "matches": "menu_matches",
+    "feedback": "menu_feedback",
+    "settings": "menu_settings"
+  },
+  "profile": {
+    "view Profile": "view_profile",
+    "edit Profile": "edit_profile",
+    "upload Photo": "upload_photo",
+    "back": "menu_main"
+  },
+  "matches": {
+    "view Matches": "view_matches",
+    "send Message": "send_message",
+    "block User": "block_user",
+    "report User": "report_user",
+    "back": "menu_main"
+  },
+  "feedback": {
+    "send Feedback": "send_feedback",
+    "view Feedback": "view_feedback",
+    "suggest Feature": "suggest_feature",
+    "back": "menu_main"
+  },
+  "settings": {
+    "set Language": "set_language",
+    "notification Settings": "notification_settings",
+    "privacy Policy": "privacy_policy",
+    "delete Account": "delete_account",
+    "back": "menu_main"
+  }
+}

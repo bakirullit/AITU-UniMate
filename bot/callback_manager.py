@@ -49,6 +49,17 @@ async def handle_approval_callback(callback: types.CallbackQuery, bot: Bot, stat
         if data_parts[2] == "clear":
             await bot.delete_message(chat_id=callback.message.chat.id, message_id=callback.message.message_id)
             await callback.answer("Message cleared!")
+    elif data_parts[1] == "search":
+        user_id, selected_language, command = data_parts
+        messages = get_saved_message_data(user_id)
+        lang = load_language(selected_language)
+        print(messages)
+        await bot.edit_message_text(
+            chat_id=messages["welcome_msg"]['chat_id'],
+            message_id=messages["welcome_msg"]['message_id'],
+            text=lang[destination],
+            reply_markup=create_menu(main_menu, selected_language, destination, user_id)
+        )
     
     
         

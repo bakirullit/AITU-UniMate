@@ -10,6 +10,23 @@ firebase_admin.initialize_app(cred)
 # Initialize Firestore
 db = firestore.client()
 
+# Ссылки на Firebase
+users_ref = db.collection("users")
+likes_ref = db.collection("likes")
+
+def save_profile_to_firebase(user_id, profile):
+    users_ref.document(user_id).set(profile)
+
+def get_profile_from_firebase(user_id):
+    doc = users_ref.document(user_id).get()
+    return doc.to_dict() if doc.exists else None
+
+def save_likes_to_firebase(user_id, likes):
+    likes_ref.document(user_id).set({"likes": likes})
+
+def get_likes_from_firebase(user_id):
+    doc = likes_ref.document(user_id).get()
+    return doc.to_dict().get("likes") if doc.exists else None
 def check_user_exists(user_id):
     # Reference to the users collection
     users_ref = db.collection('users')
@@ -141,3 +158,33 @@ def save_feedback_to_database(user_id: int, feedback_type: str, feedback_text: s
     except Exception as e:
         print(f"Error saving feedback: {e}")
 
+
+async def save_user_bio_to_firebase(user_id: int, bio: str, full_name: str):
+    try:
+        user_doc = db.collection("users").document(str(user_id))
+        user_data = {
+            "user_id": user_id,
+            "bio": bio,
+            "full_name": full_name,
+        }
+        user_doc.set(user_data)
+        print(f"Bio saved for user {user_id}: {bio}")
+    except Exception as e:
+        print(f"Error saving bio for user {user_id}: {e}")
+
+def get_all_user_bios():
+    """
+    Fetches all documents from the 'users' collection
+    and returns a list of (user_id, user_bio).
+    """
+    users_ref = db.collection("users")
+    docs = users_ref.get()
+    
+    user_bios = []
+    for doc in docs:
+        data = doc.to_dict()
+        user_id = doc.id
+        bio = data.get("bio", "")
+        user_bios.append((user_id, bio))
+    
+    return user_bios

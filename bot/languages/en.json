@@ -46,5 +46,9 @@
     "view Feedback": "View Feedback 🕒",
     "suggest Feature": "Suggest a Feature 💡",
     "notification Settings": "Notification Settings 📢",
-    "privacy Policy": "Privacy Policy 🔒"
+    "privacy Policy": "Privacy Policy 🔒",
+    "text1": "Thank you! Your bio has been saved. ✅",
+    "search": "Search 🔍",
+    "text2": "Welcome, please send your bio: 📩"
+        
 }

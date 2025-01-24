@@ -1,7 +1,7 @@
 {
   "main": {
     "profile": "menu_profile",
-    "matches": "menu_matches",
+    "search": "search",
     "feedback": "menu_feedback",
     "settings": "menu_settings"
   },
